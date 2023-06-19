@@ -37,17 +37,25 @@ To model the hand textures we utilised the powerful [StyleGAN-v3 architecture](h
 </br>
 
 ## Public release models
-Both shape and appearance models will be publicly available for research and education purposes soon. 
+Both shape and appearance models have been publicly available for research and education purposes. To obtain access to the models, you need to complete and sign the user agreement form (can be found in this repository, user_agreement.pdf). This agreement should be completed by a full-time academic member. The form should be signed, and emailed to Rolandos Alexandros Potamias (r.potamias@imperial.ac.uk) and Stylianos Ploumpis (s.ploumpis@gmail.com). We will verify your request and contact you on how to download the model package. Note that the agreement requires that:
+
+The models along with their corresponding derivatives are used for non-commercial research and education purposes only.
+You agree not copy, sell, trade, or exploit the model for any commercial purposes.
+In any published research using the models, you cite the following paper:
+
+Handy: Towards a High Fidelity 3D Hand Shape and Appearance Model, RA Potamias, S.Ploumpis, S.Moschoglou, V.Triantafyllou and S. Zafeiriou, Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), June, 2023
+
 ## Citation 
 
 If you find this work is useful for your research, please consider citing our paper. 
 
 ```
-@InProceedings{potamias2023handy,
-  author = {Potamias, Rolandos Alexandros and Ploumpis, Stylianos and Moschoglou, Stylianos and Triantafyllou, Vasileios and Zafeiriou, Stefanos},
-  title = {Handy: Towards a high fidelity 3D hand shape and appearance model},
-  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  month = {June},
-  year = {2023}
+@InProceedings{Potamias_2023_CVPR,
+    author    = {Potamias, Rolandos Alexandros and Ploumpis, Stylianos and Moschoglou, Stylianos and Triantafyllou, Vasileios and Zafeiriou, Stefanos},
+    title     = {},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2023},
+    pages     = {4670-4680}
 }
 ```
