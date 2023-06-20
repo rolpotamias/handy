@@ -45,6 +45,59 @@ In any published research using the models, you cite the following paper:
 
 Handy: Towards a High Fidelity 3D Hand Shape and Appearance Model, RA Potamias, S.Ploumpis, S.Moschoglou, V.Triantafyllou and S. Zafeiriou, Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), June, 2023
 
+## Usage 
+Once you download the hand shape and appearance models, place them under the `models` folder. To run the following scripts `numpy`, `pickle` and `trimesh` packages are needed. 
+
+#### Shape 
+To sample random shapes from the model use the following script: 
+```python 
+import numpy as np 
+import pickle
+import trimesh 
+
+with open("./models/Left_Hand_Shape.pkl", 'rb') as f:
+    hand_model = pickle.load(f)
+    
+num_comp = 30
+sigma    = 2
+
+e = hand_model['eigenvalues'][:num_comp] ## Eigenvalues of the Covariance
+T = hand_model['v_template']             ## Mean template 
+U = hand_model['components'][:num_comp]  ## Eigenvectors of the Covariance
+w = (np.random.rand(num_comp) - 0.5) * sigma * np.sqrt(e)  ## Random sample shape parameters scaled by the eigenvalues
+
+generated_hand = T + (U.T @ w ).reshape(T.shape[0] , 3)
+    
+trimesh.Trimesh(generated_hand, hand_model['f'] , process=False).export('./hand_mesh.obj')
+```
+#### Shape and Texture
+In order to generate textured meshes make sure you install the required libraries of [StyleGAN3](https://github.com/NVlabs/stylegan3). Once installed, place the  you can sample textured meshes with the following script: 
+```python
+import numpy as np 
+import pickle
+import trimesh 
+from sample_uv import sample_uv
+
+with open("./models/Left_Hand_Shape.pkl", 'rb') as f:
+    hand_model = pickle.load(f)
+
+num_comp = 30
+sigma    = 2
+
+e = hand_model['eigenvalues'][:num_comp] ## Eigenvalues of the Covariance
+T = hand_model['v_template']             ## Mean template 
+U = hand_model['components'][:num_comp]  ## Eigenvectors of the Covariance
+w = (np.random.rand(num_comp) - 0.5) * sigma * np.sqrt(e)  ## Random sample shape parameters scaled by the eigenvalues
+
+generated_hand = T + (U.T @ w ).reshape(T.shape[0] , 3)
+
+texture_uv = sample_uv(np.random.randint(1e5)) # Random seed 
+
+generated_hand = generated_hand[hand_model['transform_to_uv']] ## Some vertices are repeated to zip the texture around the hand
+trimesh.Trimesh(generated_hand, hand_model['f_uv'], 
+                visual = trimesh.visual.texture.TextureVisuals(hand_model['uv_coords'] , image = texture_uv), 
+                process=False).export('./hand_mesh.obj')
+```
 ## Citation 
 
 If you find this work is useful for your research, please consider citing our paper. 
