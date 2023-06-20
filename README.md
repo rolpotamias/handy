@@ -71,7 +71,7 @@ generated_hand = T + (U.T @ w ).reshape(T.shape[0] , 3)
 trimesh.Trimesh(generated_hand, hand_model['f'] , process=False).export('./hand_mesh.obj')
 ```
 #### Shape and Texture
-In order to generate textured meshes make sure you install the required libraries of [StyleGAN3](https://github.com/NVlabs/stylegan3). Once installed, place the  you can sample textured meshes with the following script: 
+In order to generate textured meshes make sure you install the required libraries of [StyleGAN3](https://github.com/NVlabs/stylegan3). Once installed, you can sample textured meshes with the following script: 
 ```python
 import numpy as np 
 import pickle
