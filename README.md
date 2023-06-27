@@ -105,7 +105,7 @@ If you find this work is useful for your research, please consider citing our pa
 ```
 @InProceedings{Potamias_2023_CVPR,
     author    = {Potamias, Rolandos Alexandros and Ploumpis, Stylianos and Moschoglou, Stylianos and Triantafyllou, Vasileios and Zafeiriou, Stefanos},
-    title     = {},
+    title     = {Handy: Towards a High Fidelity 3D Hand Shape and Appearance Model},
     booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
     month     = {June},
     year      = {2023},
