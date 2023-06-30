@@ -37,7 +37,7 @@ To model the hand textures we utilised the powerful [StyleGAN-v3 architecture](h
 </br>
 
 ## Public release models
-Both shape and appearance models have been publicly available for research and education purposes. To obtain access to the models, you need to complete and sign the user agreement form (can be found in this repository, user_agreement.pdf). This agreement should be completed by a full-time academic member. The form should be signed, and emailed to Rolandos Alexandros Potamias (r.potamias@imperial.ac.uk) and Stylianos Ploumpis (s.ploumpis@gmail.com). We will verify your request and contact you on how to download the model package. Note that the agreement requires that:
+Both shape and appearance models have been publicly available for research and education purposes. To obtain access to the models, you need to complete and sign the user agreement form (can be found in this repository, user_agreement.pdf). This agreement should be completed by a full-time academic member. The form should be signed, and emailed to Rolandos Alexandros Potamias (r.potamias@imperial.ac.uk). We will verify your request and contact you on how to download the model package. Note that the agreement requires that:
 
 The models along with their corresponding derivatives are used for non-commercial research and education purposes only.
 You agree not copy, sell, trade, or exploit the model for any commercial purposes.
