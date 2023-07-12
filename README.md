@@ -98,6 +98,15 @@ trimesh.Trimesh(generated_hand, hand_model['f_uv'],
                 visual = trimesh.visual.texture.TextureVisuals(hand_model['uv_coords'] , image = texture_uv), 
                 process=False).export('./hand_mesh.obj')
 ```
+
+### Articulation 
+Although Handy is a shape and appearance model, we can articulate Handy using the Linear Blend Skinning of MANO. To use the articulation of MANO download MANO model from the [MANO website](http://mano.is.tue.mpg.de/) (you will need to create an account for that). **All code and data from MANO website are under the [MANO license](http://mano.is.tue.mpg.de/license).**
+
+Once downloaded, you can run the following script to generate a pickle '.pkl' file containing the articulated Handy model in a similar format to *'RIGHT_MANO.pkl'*
+```
+python transfer_articulation_from_MANO.py --mano_model /PATH_TO_MANO/MANO_RIGHT.pkl --handy_model /PATH_TO_HANDY/Right_Hand_Shape.pkl  --output_model ./HANDY_RIGHT.pkl
+```
+
 ## Citation 
 
 If you find this work is useful for your research, please consider citing our paper. 
